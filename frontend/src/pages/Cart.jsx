@@ -49,55 +49,58 @@ const Cart = () => {
                             </div>
                         ) : (
                             <div>
-                                {cart.items.map((item) => (
-                                    <div key={item._id} style={{ display: 'flex', borderBottom: '1px solid #eee', padding: '20px 0', gap: '20px' }}>
-                                        <div style={{ width: '150px', height: '150px', backgroundColor: '#f0f0f0', flexShrink: 0 }}>
-                                            {item.sweet?.imageUrl ? (
-                                                <img src={item.sweet.imageUrl} alt={item.sweet.name} style={{ width: '100%', height: '100%', objectFit: 'contain' }} />
-                                            ) : (
-                                                <div style={{ width: '100%', height: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#ccc' }}>No Image</div>
-                                            )}
-                                        </div>
-                                        <div style={{ flex: 1 }}>
-                                            <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-                                                <h3 style={{ margin: '0 0 5px 0', fontSize: '18px', fontWeight: '500' }}>
-                                                    <Link to={`/sweets/${item.sweet._id}`} style={{ textDecoration: 'none', color: '#0F1111' }}>
-                                                        {item.sweet?.name || 'Unknown Item'}
-                                                    </Link>
-                                                </h3>
-                                                <div style={{ fontSize: '18px', fontWeight: 'bold' }}>₹{item.sweet?.price}</div>
+                                {cart.items.map((item) => {
+                                    if (!item.sweet) return null;
+                                    return (
+                                        <div key={item._id} style={{ display: 'flex', borderBottom: '1px solid #eee', padding: '20px 0', gap: '20px' }}>
+                                            <div style={{ width: '150px', height: '150px', backgroundColor: '#f0f0f0', flexShrink: 0 }}>
+                                                {item.sweet.imageUrl ? (
+                                                    <img src={item.sweet.imageUrl} alt={item.sweet.name} style={{ width: '100%', height: '100%', objectFit: 'contain' }} />
+                                                ) : (
+                                                    <div style={{ width: '100%', height: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#ccc' }}>No Image</div>
+                                                )}
                                             </div>
-                                            <div style={{ color: '#007600', fontSize: '12px', marginBottom: '8px' }}>In Stock</div>
-                                            <div style={{ fontSize: '12px', color: '#565959', marginBottom: '4px' }}>Sold by Raj Sweets</div>
-                                            <div style={{ fontSize: '12px', color: '#565959' }}>Gift options not available.</div>
-
-                                            <div style={{ marginTop: '15px', display: 'flex', alignItems: 'center', gap: '15px' }}>
-                                                <div style={{ display: 'flex', alignItems: 'center', border: '1px solid #D5D9D9', borderRadius: '7px', background: '#F0F2F2', height: '28px', boxShadow: '0 1px 2px rgba(15,17,17,.15)' }}>
-                                                    <button
-                                                        onClick={() => updateQuantity(item.sweet._id, item.quantity - 1)}
-                                                        disabled={item.quantity <= 1}
-                                                        style={{ border: 'none', background: 'transparent', padding: '0 8px', cursor: 'pointer', fontSize: '14px' }}
-                                                    >−</button>
-                                                    <span style={{ fontSize: '13px', background: 'white', padding: '0 10px', height: '100%', display: 'flex', alignItems: 'center', borderLeft: '1px solid #ddd', borderRight: '1px solid #ddd' }}>
-                                                        {item.quantity}
-                                                    </span>
-                                                    <button
-                                                        onClick={() => updateQuantity(item.sweet._id, item.quantity + 1)}
-                                                        disabled={item.sweet?.quantity && item.quantity >= item.sweet.quantity}
-                                                        style={{ border: 'none', background: 'transparent', padding: '0 8px', cursor: 'pointer', fontSize: '14px' }}
-                                                    >+</button>
+                                            <div style={{ flex: 1 }}>
+                                                <div style={{ display: 'flex', justifyContent: 'space-between' }}>
+                                                    <h3 style={{ margin: '0 0 5px 0', fontSize: '18px', fontWeight: '500' }}>
+                                                        <Link to={`/sweets/${item.sweet._id}`} style={{ textDecoration: 'none', color: '#0F1111' }}>
+                                                            {item.sweet.name}
+                                                        </Link>
+                                                    </h3>
+                                                    <div style={{ fontSize: '18px', fontWeight: 'bold' }}>₹{item.sweet.price}</div>
                                                 </div>
-                                                <div style={{ height: '14px', borderLeft: '1px solid #ddd' }}></div>
-                                                <button
-                                                    onClick={() => removeFromCart(item.sweet._id)}
-                                                    style={{ background: 'none', border: 'none', color: '#007185', fontSize: '12px', cursor: 'pointer', padding: 0 }}
-                                                >
-                                                    Delete
-                                                </button>
+                                                <div style={{ color: '#007600', fontSize: '12px', marginBottom: '8px' }}>In Stock</div>
+                                                <div style={{ fontSize: '12px', color: '#565959', marginBottom: '4px' }}>Sold by Raj Sweets</div>
+                                                <div style={{ fontSize: '12px', color: '#565959' }}>Gift options not available.</div>
+
+                                                <div style={{ marginTop: '15px', display: 'flex', alignItems: 'center', gap: '15px' }}>
+                                                    <div style={{ display: 'flex', alignItems: 'center', border: '1px solid #D5D9D9', borderRadius: '7px', background: '#F0F2F2', height: '28px', boxShadow: '0 1px 2px rgba(15,17,17,.15)' }}>
+                                                        <button
+                                                            onClick={() => updateQuantity(item.sweet._id, item.quantity - 1)}
+                                                            disabled={item.quantity <= 1}
+                                                            style={{ border: 'none', background: 'transparent', padding: '0 8px', cursor: 'pointer', fontSize: '14px' }}
+                                                        >−</button>
+                                                        <span style={{ fontSize: '13px', background: 'white', padding: '0 10px', height: '100%', display: 'flex', alignItems: 'center', borderLeft: '1px solid #ddd', borderRight: '1px solid #ddd' }}>
+                                                            {item.quantity}
+                                                        </span>
+                                                        <button
+                                                            onClick={() => updateQuantity(item.sweet._id, item.quantity + 1)}
+                                                            disabled={item.sweet.quantity && item.quantity >= item.sweet.quantity}
+                                                            style={{ border: 'none', background: 'transparent', padding: '0 8px', cursor: 'pointer', fontSize: '14px' }}
+                                                        >+</button>
+                                                    </div>
+                                                    <div style={{ height: '14px', borderLeft: '1px solid #ddd' }}></div>
+                                                    <button
+                                                        onClick={() => removeFromCart(item.sweet._id)}
+                                                        style={{ background: 'none', border: 'none', color: '#007185', fontSize: '12px', cursor: 'pointer', padding: 0 }}
+                                                    >
+                                                        Delete
+                                                    </button>
+                                                </div>
                                             </div>
                                         </div>
-                                    </div>
-                                ))}
+                                    );
+                                })}
                                 <div style={{ textAlign: 'right', fontSize: '18px', fontWeight: '500', marginTop: '10px' }}>
                                     Subtotal ({cartCount} items): <span style={{ fontWeight: 'bold' }}>₹{subtotal}</span>
                                 </div>

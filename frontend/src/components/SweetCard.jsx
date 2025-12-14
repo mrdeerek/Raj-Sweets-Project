@@ -132,7 +132,7 @@ export default function SweetCard({ sweet, refresh }) {
             </div>
 
             <button
-              className={`btn-add-to-cart ${sweet.quantity === 0 ? 'disabled' : ''}`}
+              className={`btn-buy-now ${sweet.quantity === 0 ? 'disabled' : ''}`}
               disabled={sweet.quantity === 0 || loading}
               onClick={handleBuyNow}
               style={{ fontSize: '13px', padding: '0 8px', background: '#FA8900', borderColor: '#FA8900', height: '36px' }}
