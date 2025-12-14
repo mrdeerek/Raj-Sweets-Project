@@ -58,7 +58,7 @@ A full-stack Sweet Shop Management System built with the MERN stack (MongoDB, Ex
 
 ## My AI Usage
 
-**AI Tools Used**: Google DeepMind Antigravity (powered by Gemini models).
+**AI Tools Used**: ChatGpt,Google Gemini.
 
 **Usage Details**:
 - **Backend Architecture**: Used AI to generate the initial structure and unit tests for the backend API, strictly following TDD principles.
@@ -116,3 +116,31 @@ SHOPPING CART
 
 
 
+🧠 Test-Driven Development (TDD)
+This project follows Test-Driven Development:
+
+Write failing tests (Red)
+Implement minimum logic (Green)
+Refactor for clean code (Refactor)
+Commit history reflects the Red → Green → Refactor workflow.
+
+🎯 Future Improvements
+Payment gateway integration
+Order status tracking (Delivered / Cancelled)
+Admin analytics dashboard
+Email notifications
+Advanced search and filters
+
+👤 Author
+Kunal Raj
+🎓 B.E. Student | Full Stack Developer
+📍 Chandigarh University
+💻 Skills: MERN Stack, TypeScript, Java, SQL
+
+
+⭐ Final Notes
+Fully original implementation
+AI-assisted but human-validated
+Clean architecture and scalable design
+Production-ready deployment
+👉 Live Application: https://raj-sweets-project-3fly.vercel.app/
