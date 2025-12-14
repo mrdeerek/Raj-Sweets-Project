@@ -115,32 +115,51 @@ SHOPPING CART
 <img width="1898" height="876" alt="Screenshot 2025-12-14 203856" src="https://github.com/user-attachments/assets/20bb93af-1a8d-41e4-9735-256e4d471ddb" />
 
 
+## 🧠 Test-Driven Development (TDD)
 
-🧠 Test-Driven Development (TDD)
-This project follows Test-Driven Development:
+This project strictly follows **Test-Driven Development (TDD)** principles:
 
-Write failing tests (Red)
-Implement minimum logic (Green)
-Refactor for clean code (Refactor)
-Commit history reflects the Red → Green → Refactor workflow.
+- 🔴 **Red** – Write failing tests first  
+- 🟢 **Green** – Implement the minimum logic to pass tests  
+- 🔵 **Refactor** – Improve code quality and structure  
 
-🎯 Future Improvements
-Payment gateway integration
-Order status tracking (Delivered / Cancelled)
-Admin analytics dashboard
-Email notifications
-Advanced search and filters
+📌 The commit history clearly reflects the **Red → Green → Refactor** workflow.
 
-👤 Author
-Kunal Raj
-🎓 B.E. Student | Full Stack Developer
-📍 Chandigarh University
-💻 Skills: MERN Stack, TypeScript, Java, SQL
+---
 
+## 🎯 Future Improvements
 
-⭐ Final Notes
-Fully original implementation
-AI-assisted but human-validated
-Clean architecture and scalable design
-Production-ready deployment
-👉 Live Application: https://raj-sweets-project-3fly.vercel.app/
+Planned enhancements for upcoming versions:
+
+- 💳 Payment Gateway Integration  
+- 📦 Order Status Tracking (Delivered / Cancelled)  
+- 📊 Admin Analytics Dashboard  
+- 📧 Email Notifications  
+- 🔍 Advanced Search & Filters  
+
+---
+
+## 👤 Author
+
+**Kunal Raj**  
+🎓 B.E. Student | Full Stack Developer  
+📍 Chandigarh University  
+
+### 💻 Skills
+- MERN Stack  
+- TypeScript  
+- Java  
+- SQL  
+
+---
+
+## ⭐ Final Notes
+
+- ✅ Fully original implementation  
+- 🤖 AI-assisted but **human-validated**  
+- 🧱 Clean architecture & scalable design  
+- 🚀 Production-ready deployment  
+
+👉 **Live Application:**  
+🔗 https://raj-sweets-project-3fly.vercel.app/
+
