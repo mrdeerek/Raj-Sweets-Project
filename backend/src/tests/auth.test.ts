@@ -3,27 +3,30 @@ dotenv.config();
 
 import request from "supertest";
 import app from "../app";
+import User from "../models/User";
+import bcrypt from "bcryptjs";
 
-jest.mock("../models/User", () => ({
-  create: jest.fn().mockResolvedValue({
-    email: "testuser@gmail.com",
-    password: "hashedpassword"
-  }),
-  findOne: jest.fn().mockResolvedValue({
-    _id: "mockUserId",
-    email: "testuser@gmail.com",
-    password: "hashedpassword",
-    role: "USER"
-  })
-}));
-
-jest.mock("bcryptjs", () => ({
-  compare: jest.fn().mockResolvedValue(true),
-  hash: jest.fn().mockResolvedValue("hashedpassword")
-}));
+// Mock the model methods
+jest.mock("../models/User");
+jest.mock("bcryptjs");
 
 describe("Auth API", () => {
+  beforeEach(() => {
+    jest.clearAllMocks();
+  });
+
   it("should register a new user", async () => {
+    // Mock findOne to return null (user doesn't exist)
+    (User.findOne as jest.Mock).mockResolvedValue(null);
+    // Mock create
+    (User.create as jest.Mock).mockResolvedValue({
+      email: "testuser@gmail.com",
+      password: "hashedpassword",
+      _id: "mockUserId",
+      role: "USER"
+    });
+    (bcrypt.hash as jest.Mock).mockResolvedValue("hashedpassword");
+
     const res = await request(app)
       .post("/api/auth/register")
       .send({
@@ -36,6 +39,16 @@ describe("Auth API", () => {
   });
 
   it("should login an existing user and return a token", async () => {
+    // Mock findOne to return a user
+    (User.findOne as jest.Mock).mockResolvedValue({
+      _id: "mockUserId",
+      email: "testuser@gmail.com",
+      password: "hashedpassword",
+      role: "USER"
+    });
+    // Mock bcrypt compare
+    (bcrypt.compare as jest.Mock).mockResolvedValue(true);
+
     const res = await request(app)
       .post("/api/auth/login")
       .send({
