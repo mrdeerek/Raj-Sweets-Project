@@ -31,17 +31,12 @@ A full-stack Sweet Shop Management System built with the MERN stack (MongoDB, Ex
    ```bash
    npm install
    ```
-3. Create a `.env` file (if not present) with:
-   ```env
-   PORT=5000
-   MONGO_URI=mongodb://localhost:27017/sweetshop
-   JWT_SECRET=SECRET_KEY
-   ```
-4. Start the server:
+
+3. Start the server:
    ```bash
    npm run dev
    ```
-5. Run tests:
+4. Run tests:
    ```bash
    npm test
    ```
@@ -76,4 +71,48 @@ A full-stack Sweet Shop Management System built with the MERN stack (MongoDB, Ex
 AI significantly accelerated the boilerplate setup and frontend styling, allowing more time to focus on business logic and testing correctness. The co-authorship model ensured that every AI-generated block was reviewed and verified (e.g., fixing the failing tests).
 
 ## Screenshots
-*(Insert screenshots of Dashboard, Login, and Admin Panel here)*
+*(Insert screenshots of Dashboard, Login, and Admin Panel etc here)*
+
+
+DASHBOARD
+<img width="1899" height="866" alt="Screenshot 2025-12-14 203652" src="https://github.com/user-attachments/assets/374b6c9a-aa6c-4def-ba9a-d501f61f9de7" />
+
+
+
+LOGIN
+<img width="1899" height="882" alt="Screenshot 2025-12-14 203617" src="https://github.com/user-attachments/assets/3bc5a9bb-f5bc-4de6-90c3-594880f5ed0b" />
+
+
+
+ADMIN PANNEL
+<img width="1906" height="589" alt="Screenshot 2025-12-14 203736" src="https://github.com/user-attachments/assets/02f7aeab-2748-42f5-adcf-508ffd3afd47" />
+
+<img width="1902" height="867" alt="Screenshot 2025-12-14 205945" src="https://github.com/user-attachments/assets/4af3ae9f-b074-48c4-be32-35765cb26924" />
+
+
+
+ADDING PRODUCT
+<img width="953" height="736" alt="Screenshot 2025-12-14 204411" src="https://github.com/user-attachments/assets/db8b7ebf-eaf7-4606-afd6-2dc15fdfb679" />
+
+<img width="1910" height="849" alt="Screenshot 2025-12-14 203753" src="https://github.com/user-attachments/assets/bb6ed0c0-69ef-4066-b801-972a50822f78" />
+
+
+
+USER ORDER
+<img width="1918" height="865" alt="Screenshot 2025-12-14 203928" src="https://github.com/user-attachments/assets/625eeb4e-d525-4872-a189-4ce30c571152" />
+
+<img width="1902" height="873" alt="Screenshot 2025-12-14 203944" src="https://github.com/user-attachments/assets/1d6c20b9-0b8d-4823-9c36-c20197e2c027" />
+
+
+
+USER DASHBOARD
+<img width="1901" height="805" alt="Screenshot 2025-12-14 210136" src="https://github.com/user-attachments/assets/873224d0-20dc-41a9-ad6e-f9520e229d22" />
+
+
+
+
+SHOPPING CART
+<img width="1898" height="876" alt="Screenshot 2025-12-14 203856" src="https://github.com/user-attachments/assets/20bb93af-1a8d-41e4-9735-256e4d471ddb" />
+
+
+
