@@ -143,7 +143,15 @@ Planned enhancements for upcoming versions:
 
 **Kunal Raj**  
 🎓 B.E. Student | Full Stack Developer  
-📍 Chandigarh University  
+📍 Chandigarh University 
+
+## ## 🤝 Co-Author Attribution
+
+This project was developed with assistance from AI tools for ideation, structuring, and validation.
+
+- **Co-authored-by:** ChatGPT <chatgpt@users.noreply.github.com>  
+- **Co-authored-by:** Gemini <gemini@users.noreply.github.com>
+ 
 
 ### 💻 Skills
 - MERN Stack  
